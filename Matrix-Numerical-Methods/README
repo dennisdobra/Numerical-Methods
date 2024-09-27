@@ -1,0 +1,64 @@
+I Problem 1: Markov is Coming
+Function parse_labyrinth
+
+Opens the file from which I read.
+Reads the dimensions of the matrix and then the elements of the matrix.
+Function get_adjacency_matrix
+
+Initializes the adjacency matrix Adj with zeros (of the necessary dimensions) and then checks for each "cell" in the matrix where there are walls and where there are not. If there is no wall, I put a value of 1 in the adjacency matrix.
+First, I check the border of the matrix to complete win and lose, and then the elements inside.
+Function get_link_matrix
+
+Constructs the matrix with probabilities by counting the number of 1s in each row of the adjacency matrix Adj, and then for each time I encounter a value of 1, I divide it by the total number of 1 values.
+Function get_Jacobi_parameters
+
+Constructs the iteration matrix and the iteration vector according to the given formulas.
+Function perform_iterative
+
+Constructs the column vector with the winning probabilities for each cell in the labyrinth.
+Function heuristic_greedy
+
+visited = a vector in which I remember all the cells I have passed through.
+Then I check which neighbors the current cell has, and if a certain neighbor exists, I check if I have already passed through it using the ismember function. If it is not visited, I check which cell has the highest winning probability near the current one and add that cell to both the visited vector and the path.
+Function decoded_path
+
+Decodes the previously created path vector.
+II Problem 2: Linear Regression
+Function parse_data_set_file
+
+Creates the InitialMatrix of type cell and populates it with elements from Y.
+Function prepare_for_regression
+
+Iterates over the rows of the InitialMatrix and, depending on the values in it, creates the FeatureMatrix according to the specified requirements.
+Function linear_regression_cost_function
+
+Implements the given formula.
+Function parse_csv_file
+
+Parses the .csv file provided as a parameter.
+Function gradient_descent
+
+Calculates the coefficients theta1, theta2, ..., thetan using the gradient descent method.
+Function normal_equation
+
+Implements the pseudocode for the conjugate gradient method.
+Function lasso_regression_cost_function
+
+Implements the formula provided in the documentation for this function.
+Function ridge_regression_cost_function
+
+Implements the formula for ridge_regression_cost_function.
+III Problem 3: MNIST 101
+Function load_dataset
+
+Loads the file into memory using the instruction: load(path);.
+Function split_dataset
+
+Generates a random permutation p.
+Shuffles the rows of matrix X and those of matrix y using the generated permutation.
+Further, puts in X_train the first percent * n rows and in X_test the remaining ones.
+Analogous for Y.
+Function initialize_weights
+
+Calculates epsilon according to the given formula.
+Fills the matrix matrix with random values from the interval (-epsilon, epsilon).
